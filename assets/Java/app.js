@@ -1,22 +1,34 @@
 
 
 
-// $("#startbtn").on("click", start);
-
-// // $(setTimeout(timeUp, 1000 * 30)
+$("#startbtn").on("click", start);
 
 
+function start() {
+    var count = 15;
 
-// function start() {
 
+    function startTimer() {
+        setTimeout(countDown, 1000);
+    }
 
+    function timeUp() {
+        $('#timer').text("Time Left: " + 0);
+        $("#time-left").append("<h2>Time's Up!</h2>");
+        console.log("time is up");
+    }
 
-//     function timeUp() {
-
-//         $("#time-left").append("<h2>Time's Up!</h2>");
-//         console.log("time is up");
-//     }
-//     }
+    function countDown() {
+        if(--count === 0) {
+            timeUp();
+        } else {
+            $('#timer').text("Time Left: " + count);
+            startTimer();
+        }
+    }
+    $('#timer').text("Time Left: " + count);
+    startTimer();
+}
 var questionsArr = [
     {
         Q: "How many colours are there in a rainbow?",
@@ -80,13 +92,13 @@ $('.radio').on('click', function () {
         console.log("wrong" + wrong)
 
     }
+    $('.rightA').text("Right Answers: " + userScore)
+    $('.wrongA').text("Wrong Answers: " + wrong)
 
 });
 var rightA = $('.final-page').append('<div class=rightA>');
 var wrongA = $('.final-page').append('<div class=wrongA>');
 
-$('.rightA').text("Right Answers: " + userScore)
-$('.wrongA').text("Wrong Answers: " + wrong)
 //after timeer runs out hide questions & jumbo then show final score
 
 
