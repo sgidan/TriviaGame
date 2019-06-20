@@ -64,18 +64,31 @@ questionsArr.forEach(function (question, questionsIndex) {
     $('.row').append(col);
 
 });
-
+var userScore = 0;
+var wrong = 0;
 $('.radio').on('click', function () {
     var questionsIndex = $(this).attr('name');
-    var answersIndex =$(this).attr('index');
+    var answersIndex = $(this).attr('index');
+    var rightAns = questionsArr[questionsIndex].correctAns
 
-    console.log(questionsIndex, answersIndex);
-    
 
-    
+    if (answersIndex == rightAns) {
+        userScore++;
+        console.log("right" + userScore)
+    } else {
+        wrong++;
+        console.log("wrong" + wrong)
+
+    }
+
 });
+var rightA = $('.final-page').append('<div class=rightA>');
+var wrongA = $('.final-page').append('<div class=wrongA>');
 
-var userScore;
+$('.rightA').text("Right Answers: " + userScore)
+$('.wrongA').text("Wrong Answers: " + wrong)
+//after timeer runs out hide questions & jumbo then show final score
+
 
 
 
