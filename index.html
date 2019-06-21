@@ -16,40 +16,40 @@
 
 <body>
 
-</body>
-<container>
-    <div class="jumbotron">
-        <h1 class="display-4">Trivia Game</h1>
-        <p class="lead">Click the start button to begin a fun quiz! You will be timed, Good luck!</p>
-        <hr class="my-4">
-        <a class="btn btn-primary btn-lg" id="startbtn" href="#" role="button">Start</a>
-    </div>
-</container>
-<div class="questions-page">
-    <div class="questions-container">
+
+    <container>
         <div class="jumbotron">
             <h1 class="display-4">Trivia Game</h1>
             <hr class="my-4">
-            <div id='timer'></div>
+            <div id='firstpage'>
+                <p class="lead">Click the start button to begin a fun quiz! You will be timed, Good luck!</p>
+                <a class="btn btn-primary btn-lg" id="startbtn" href="#" role="button">Start</a>
+            </div>
         </div>
-        <div class="row"></div>
 
-
-    </div>
-
-    <div class="final-page">
-            <div class="jumbotron">
+        <div id="questions-page" style="display: none">
+            <div class="questions-container">
+                <!-- <div class="jumbotron">
                     <h1 class="display-4">Trivia Game</h1>
-                    <hr class="my-4">
-
-    </div>
-
-
-
+                    <hr class="my-4"> -->
+                    <div id='timer'></div>
+                </div>
+                <div class="row"></div>
 
 
+            </div>
 
+            <div id="final-page" style="display: none">
+                <!-- <div class="jumbotron">
+                    <h1 class="display-4">Trivia Game</h1>
+                    <hr class="my-4"> -->
 
+                </div>
+
+            </div>
+        </div>
+
+    </container>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -58,5 +58,7 @@
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
     <script src="assets\Java\app.js"></script>
+    </div>
+</body>
 
 </html>

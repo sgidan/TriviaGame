@@ -5,6 +5,10 @@ $("#startbtn").on("click", start);
 
 
 function start() {
+
+    $("#firstpage").hide();
+    $('#questions-page').show();
+
     var count = 15;
 
 
@@ -15,11 +19,14 @@ function start() {
     function timeUp() {
         $('#timer').text("Time Left: " + 0);
         $("#time-left").append("<h2>Time's Up!</h2>");
-        console.log("time is up");
+        
+        $('#questions-page').hide();
+        $('#final-page').show();
     }
 
     function countDown() {
-        if(--count === 0) {
+        if (--count === 0) {
+           
             timeUp();
         } else {
             $('#timer').text("Time Left: " + count);
