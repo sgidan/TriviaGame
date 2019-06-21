@@ -12,6 +12,17 @@
     margin-bottom:10px;
 }
 
-.final-page{
+#final-page{
     text-align: center;
+    border: solid black 2px;
+   margin: auto;
+   width:50%;   
+
+}
+#timer{
+    text-align: center;
+    color: red;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
 }

@@ -10,6 +10,8 @@ function start() {
     $('#questions-page').show();
 
     var count = 15;
+    userScore=0;
+    wrong=0;
 
 
     function startTimer() {
@@ -19,15 +21,17 @@ function start() {
     function timeUp() {
         $('#timer').text("Time Left: " + 0);
         $("#time-left").append("<h2>Time's Up!</h2>");
-        
-        $('#questions-page').hide();
-        $('#final-page').show();
+        $('.rightA').text("Right Answers: " + userScore)
+        $('.wrongA').text("Wrong Answers: " + wrong)
+
+
     }
 
     function countDown() {
         if (--count === 0) {
-           
+            $('#questions-page').hide();
             timeUp();
+            $('#final-page').show();
         } else {
             $('#timer').text("Time Left: " + count);
             startTimer();
@@ -99,12 +103,10 @@ $('.radio').on('click', function () {
         console.log("wrong" + wrong)
 
     }
-    $('.rightA').text("Right Answers: " + userScore)
-    $('.wrongA').text("Wrong Answers: " + wrong)
 
 });
-var rightA = $('.final-page').append('<div class=rightA>');
-var wrongA = $('.final-page').append('<div class=wrongA>');
+var rightA = $('#final-page').append('<div class="rightA">');
+var wrongA = $('#final-page').append('<div class="wrongA">');
 
 //after timeer runs out hide questions & jumbo then show final score
 
